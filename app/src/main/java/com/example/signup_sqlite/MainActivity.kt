@@ -16,6 +16,7 @@ class MainActivity : ComponentActivity() {
     private lateinit var confirmPassword: EditText
     private lateinit var signupButton: View
     private lateinit var dbHelper: DatabaseHelper
+    //yes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
