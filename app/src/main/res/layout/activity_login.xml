@@ -29,7 +29,7 @@
         android:text="Tailor Swift: Where Every Stitch Tells Your Story"
         android:layout_below="@+id/name"
         android:gravity="center"
-        android:layout_above=""
+
         />
     </LinearLayout>
 

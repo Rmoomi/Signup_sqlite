@@ -1,6 +1,6 @@
 package com.example.signup_sqlite;
 
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +19,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);  // Make sure this layout file exists
 
-        dbHelper = new com.example.signup_sqlite.DatabaseHelper (this);
+        dbHelper = new com.example.signup_sqlite.DatabaseHelper(this);
 
         // Initialize views
         email = findViewById(R.id.email);
@@ -37,8 +37,11 @@ public class Login extends AppCompatActivity {
                 boolean isUserValid = dbHelper.checkUser(emailAddress, pass);
                 if (isUserValid) {
                     Toast.makeText(Login.this, "Login successful!", Toast.LENGTH_SHORT).show();
-                    // Navigate to the next screen (For example, a dashboard activity)
-                    // You can use an Intent here to move to another Activity
+
+                    // Navigate to the dashboard activity
+                    Intent intent = new Intent(Login.this, dashboard.class);
+                    startActivity(intent);
+                    finish(); // Close the LoginActivity
                 } else {
                     Toast.makeText(Login.this, "Invalid email or password.", Toast.LENGTH_SHORT).show();
                 }
@@ -46,6 +49,5 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(Login.this, "Please fill both fields.", Toast.LENGTH_SHORT).show();
             }
         });
-        
     }
 }

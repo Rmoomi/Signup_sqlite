@@ -16,7 +16,6 @@ class MainActivity : ComponentActivity() {
     private lateinit var confirmPassword: EditText
     private lateinit var signupButton: View
     private lateinit var dbHelper: DatabaseHelper
-    //yes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,8 +47,9 @@ class MainActivity : ComponentActivity() {
                         Toast.makeText(this@MainActivity, "Sign up successful!", Toast.LENGTH_SHORT).show()
 
                         // Go to the Login activity
-                        val intent = Intent(this@MainActivity, login::class.java)
-                        startActivity(intent)
+                        val intent = Intent(this@MainActivity, Login::class.java)
+                        startActivity(intent) // Start the LoginActivity
+
                         finish() // Close the SignUpActivity
                     } else {
                         Toast.makeText(this@MainActivity, "Sign up failed. Try again.", Toast.LENGTH_SHORT).show()
